@@ -1,0 +1,9 @@
+Class / Objects/ Inheritance
+----------------------------
+class Abc:
+    pass
+o1 = Abc()
+o2 = Abc()
+o1.name='Hello'
+o2.age = 123
+print(o1.name, o2.age)
