@@ -1,0 +1,9 @@
+Exception
+--------------
+try:
+    try your code
+    ...............
+except:
+    Exception handling code
+else:
+    Works if no exception
