@@ -1,0 +1,74 @@
+1. Create the database
+import sqlite3
+conn = sqlite3.connect('test.db')
+print('Database Created/Opened')
+
+CRUD
+2. C- Create
+
+import sqlite3
+conn =sqlite3.connect('test.db')
+query = '''
+CREATE TABLE emp(
+    id INT,
+    name TEXT,
+    phone TEXT
+)
+'''
+conn.execute(query)
+print('Table Created')
+conn.close()
+
+3. Insert
+-------------
+import sqlite3
+conn = sqlite3.connect('test.db')
+query1 = "INSERT INTO emp(id, name, phone) VALUES (1, 'Abcd', '123456')"
+query2 = "INSERT INTO emp(id, name, phone) VALUES (2, 'Xyz', '000000')"
+
+conn.execute(query1)
+conn.execute(query2)
+print('Record inserted')
+conn.commit()
+conn.close()
+
+4. Select
+----------
+import sqlite3
+conn = sqlite3.connect('test.db')
+query = 'SELECT * FROM emp'
+
+cursor = conn.execute(query)
+for row in cursor:
+    print(row[0], row[1], row[2])
+conn.close()
+
+5. Update
+------
+import sqlite3
+conn = sqlite3.connect('test.db')
+query = "UPDATE emp SET phone='111222' WHERE id=1"
+conn.execute(query)
+conn.commit()
+conn.close()
+
+6. Delete
+------------
+import sqlite3
+conn = sqlite3.connect('test.db')
+query = "DELETE FROM emp  WHERE id=2"
+conn.execute(query)
+conn.commit()
+conn.close()
+
+
+
+
+
+
+
+
+
+
+
+
